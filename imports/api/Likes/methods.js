@@ -7,7 +7,7 @@ Meteor.methods({
   'likes.insert': function likesInsert(like) {
     check(like, {
       title: String,
-      link: String,
+      permalink: String,
       numComments: Number,
       thumbnail: String,
       redditId: String

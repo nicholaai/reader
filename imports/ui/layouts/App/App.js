@@ -12,6 +12,7 @@ import Public from '../../components/Public/Public';
 import Authenticated from '../../components/Authenticated/Authenticated';
 import Index from '../../pages/Index/Index';
 import Hot from '../../pages/Hot/Hot';
+import Likes from '../../pages/Likes/Likes';
 import LikesCollection from '../../../api/Likes/Likes';
 
 import Signup from '../../pages/Signup/Signup';
@@ -31,6 +32,7 @@ const App = props => (
           <Switch>
             <Route exact name="index" path="/" component={Index} />
             <Authenticated exact path="/hot" component={Hot} {...props} />
+            <Authenticated exact path="/likes" component={Likes} {...props} />
             <Public path="/signup" component={Signup} {...props} />
             <Public path="/login" component={Login} {...props} />
             <Route component={NotFound} />

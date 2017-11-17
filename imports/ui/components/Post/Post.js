@@ -10,13 +10,13 @@ class Post extends Component {
     this.props.onClick(this.props.item);
   };
   render() {
-    const { id, title, permalink, thumbnail } = this.props.item;
+    const { title, permalink, thumbnail } = this.props.item;
     const { isFavorite } = this.props;
     const redditLink = enums.redditUrl + permalink;
 
     return (
-      <div key={id}>
-        <Button onClick={this.handleClick} value={id} className={isFavorite}>
+      <div>
+        <Button onClick={this.handleClick} className={isFavorite}>
           Add
         </Button>
         <a href={redditLink} target="_blank">
@@ -34,8 +34,7 @@ Post.propTypes = {
   item: PropTypes.shape({
     title: PropTypes.string.isRequired,
     permalink: PropTypes.string.isRequired,
-    thumbnail: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired
+    thumbnail: PropTypes.string.isRequired
   }).isRequired
 };
 

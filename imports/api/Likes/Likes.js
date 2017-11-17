@@ -22,7 +22,7 @@ Likes.schema = new SimpleSchema({
     type: String,
     label: 'Title of the liked post.'
   },
-  link: {
+  permalink: {
     type: String,
     label: 'Link to the associated liked post.'
   },

@@ -65,7 +65,7 @@ class Hot extends Component {
     } else {
       doc = {
         title: item.title,
-        link: item.permalink,
+        permalink: item.permalink,
         numComments: item.num_comments,
         thumbnail: item.thumbnail,
         redditId: item.id
@@ -84,7 +84,7 @@ class Hot extends Component {
     const { likesLoading, likes } = this.props;
     const { items, count } = this.state;
     return !likesLoading && !this.state.redditLoading ? (
-      <div className="Likes">
+      <div className="Hot">
         <div className="page-header clearfix">
           <h4 className="pull-left">What&#39;s Hot</h4>
         </div>
