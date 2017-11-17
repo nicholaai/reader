@@ -9,7 +9,9 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { Roles } from 'meteor/alanning:roles';
 import Navigation from '../../components/Navigation/Navigation';
 import Public from '../../components/Public/Public';
+import Authenticated from '../../components/Authenticated/Authenticated';
 import Index from '../../pages/Index/Index';
+import Hot from '../../pages/Hot/Hot';
 import LikesCollection from '../../../api/Likes/Likes';
 
 import Signup from '../../pages/Signup/Signup';
@@ -28,6 +30,7 @@ const App = props => (
         <Grid>
           <Switch>
             <Route exact name="index" path="/" component={Index} />
+            <Authenticated exact path="/hot" component={Hot} {...props} />
             <Public path="/signup" component={Signup} {...props} />
             <Public path="/login" component={Login} {...props} />
             <Route component={NotFound} />
