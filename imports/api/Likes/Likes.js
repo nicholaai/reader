@@ -57,3 +57,7 @@ Likes.schema = new SimpleSchema({
     }
   }
 });
+
+Likes.attachSchema(Likes.schema);
+
+export default Likes;
