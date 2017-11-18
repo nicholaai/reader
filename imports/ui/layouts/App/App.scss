@@ -1,5 +1,11 @@
 @import '../../stylesheets/colors';
 
 .App > .container {
-  margin-bottom: 20px;
+  padding-bottom: 50px;
+  background-color: white;
+}
+
+#wrapper {
+  background-color: #f7f7f7;
+  height: 100vh;
 }
