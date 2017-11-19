@@ -19,32 +19,28 @@ import Signup from '../../pages/Signup/Signup';
 import Login from '../../pages/Login/Login';
 
 import NotFound from '../../pages/NotFound/NotFound';
-// import Footer from '../../components/Footer/Footer';
 
 import './App.scss';
 
 const App = props => (
   <Router>
-    <div id="wrapper">
-      {!props.loading ? (
-        <div className="App">
-          <Navigation {...props} />
-          <Grid>
-            <Switch>
-              <Route exact name="index" path="/" component={Index} />
-              <Authenticated exact path="/hot" component={Hot} {...props} />
-              <Authenticated exact path="/likes" component={Likes} {...props} />
-              <Public path="/signup" component={Signup} {...props} />
-              <Public path="/login" component={Login} {...props} />
-              <Route component={NotFound} />
-            </Switch>
-          </Grid>
-          {/* <Footer /> */}
-        </div>
-      ) : (
-        ''
-      )}
-    </div>
+    {!props.loading ? (
+      <div className="App">
+        <Navigation {...props} />
+        <Grid>
+          <Switch>
+            <Route exact name="index" path="/" component={Index} />
+            <Authenticated exact path="/hot" component={Hot} {...props} />
+            <Authenticated exact path="/likes" component={Likes} {...props} />
+            <Public path="/signup" component={Signup} {...props} />
+            <Public path="/login" component={Login} {...props} />
+            <Route component={NotFound} />
+          </Switch>
+        </Grid>
+      </div>
+    ) : (
+      ''
+    )}
   </Router>
 );
 

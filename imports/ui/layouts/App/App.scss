@@ -1,11 +1,16 @@
 @import '../../stylesheets/colors';
 
+body {
+  background-color: #f7f7f7;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 .App > .container {
-  padding-bottom: 50px;
+  margin-bottom: 50px;
+  padding-bottom: 25px;
   background-color: white;
 }
 
-#wrapper {
-  background-color: #f7f7f7;
-  height: 100vh;
+.header {
+  color: $reddit-orange;
 }

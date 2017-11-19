@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
-import { Button } from 'react-bootstrap';
 import { Bert } from 'meteor/themeteorchef:bert';
 import Post from '../../components/Post/Post';
 import Loading from '../../components/Loading/Loading';
+import PaginationBtns from '../../components/PaginationBtns/PaginationBtns';
 import enums from '../../../modules/enums';
 import isFavItem from '../../../modules/isFavItem';
 
@@ -86,7 +86,7 @@ class Hot extends Component {
     return !likesLoading && !this.state.redditLoading ? (
       <div className="Hot">
         <div className="page-header clearfix">
-          <h4 className="pull-left">What&#39;s Hot</h4>
+          <h4 className="pull-left header">What&#39;s Hot</h4>
         </div>
         {items.map(item => (
           <Post
@@ -96,14 +96,8 @@ class Hot extends Component {
             isFavorite={this.isSelected(item, likes)}
           />
         ))}
-        {count > enums.itemsPerPage && (
-          <Button id="before" onClick={this.handleClick} value={this.state.count - 24}>
-            Prev
-          </Button>
-        )}
-        <Button id="after" onClick={this.handleClick} value={this.state.count}>
-          Next
-        </Button>
+        <hr />
+        <PaginationBtns count={count} onClick={this.handleClick} />
       </div>
     ) : (
       <Loading />
