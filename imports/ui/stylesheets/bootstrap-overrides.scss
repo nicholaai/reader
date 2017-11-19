@@ -1,5 +1,6 @@
 @import './mixins';
 @import './colors';
+@import './breakpoints.scss';
 
 .page-header {
   margin-top: 0;
@@ -10,6 +11,38 @@
 .form-control,
 .alert {
   border-radius: 0;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  border-bottom: 1px solid $reddit-orange;
+  color: black;
+  background-color: white;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: black;
+  &:hover {
+    color: $reddit-orange;
+  }
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  @media (max-width: $screen-xs-max) {
+    padding: 15px 0;
+  }
+}
+.navbar-brand > img {
+  padding: 7px 14px;
+  width: 90px;
+}
+
+.nav > li > a > img {
+  width: 30px;
+  border-radius: 50%;
 }
 
 .navbar {

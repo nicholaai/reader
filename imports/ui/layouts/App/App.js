@@ -56,17 +56,14 @@ App.propTypes = {
 
 export default withTracker(() => {
   const loggingIn = Meteor.loggingIn();
-  const user = Meteor.user();
   const userId = Meteor.userId();
   const loading = !Roles.subscription.ready();
-  const name = user && user.username;
   const subscription = Meteor.subscribe('likes');
 
   return {
     loading,
     loggingIn,
     authenticated: !loggingIn && !!userId,
-    name,
     roles: !loading && Roles.getRolesForUser(userId),
     userId,
     likesLoading: !subscription.ready(),

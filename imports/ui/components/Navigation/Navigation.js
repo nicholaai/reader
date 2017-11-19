@@ -11,7 +11,9 @@ const Navigation = props => (
   <Navbar>
     <Navbar.Header>
       <Navbar.Brand>
-        <Link to="/">Reader</Link>
+        <Link to="/">
+          <img src="/icon.png" alt="reddit logo" />
+        </Link>
       </Navbar.Brand>
       <Navbar.Toggle />
     </Navbar.Header>
@@ -21,13 +23,8 @@ const Navigation = props => (
   </Navbar>
 );
 
-Navigation.defaultProps = {
-  name: ''
-};
-
 Navigation.propTypes = {
-  authenticated: PropTypes.bool.isRequired,
-  name: PropTypes.string
+  authenticated: PropTypes.bool.isRequired
 };
 
 export default Navigation;

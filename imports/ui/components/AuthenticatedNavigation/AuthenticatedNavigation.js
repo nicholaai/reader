@@ -13,7 +13,6 @@ class AuthenticatedNavigation extends Component {
   };
 
   render() {
-    const { name } = this.props;
     return (
       <div>
         <Nav>
@@ -29,7 +28,7 @@ class AuthenticatedNavigation extends Component {
           </LinkContainer>
         </Nav>
         <Nav pullRight>
-          <NavDropdown eventKey={3} title={name} id="user-nav-dropdown">
+          <NavDropdown eventKey={3} title={<img src="/profPic.jpg" alt="profile pic" />} id="user-nav-dropdown">
             <MenuItem eventKey={3.2} onClick={this.handleClick}>
               Logout
             </MenuItem>
@@ -41,7 +40,6 @@ class AuthenticatedNavigation extends Component {
 }
 
 AuthenticatedNavigation.propTypes = {
-  name: PropTypes.string.isRequired,
   history: PropTypes.object.isRequired
 };
 
