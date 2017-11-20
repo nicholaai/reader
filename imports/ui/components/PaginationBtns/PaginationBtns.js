@@ -15,7 +15,7 @@ class PaginationBtns extends Component {
       <Row className="post pag-row">
         <Col xs={12}>
           {count > enums.itemsPerPage && (
-            <button id="before" onClick={this.handleClick} value={count - 24} className="pag-btn">
+            <button id="before" onClick={this.handleClick} value={count - (enums.itemsPerPage - 1)} className="pag-btn">
               Previous
             </button>
           )}
