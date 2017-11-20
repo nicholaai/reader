@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 
+// unauthenticated users should not be able to view "private" pages like hot / likes
+
 const Authenticated = ({ loggingIn, authenticated, component, path, exact, ...rest }) => (
   <Route
     path={path}

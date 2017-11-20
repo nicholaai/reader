@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 
+// authenticated users should not be able to view "public" pages like signin / login
+
 const Public = ({ loggingIn, authenticated, component, path, exact, ...rest }) => (
   <Route
     path={path}

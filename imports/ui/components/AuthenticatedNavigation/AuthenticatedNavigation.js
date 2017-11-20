@@ -12,6 +12,7 @@ class AuthenticatedNavigation extends Component {
     history.push('/');
   };
 
+  // a default profile picture is used here, in prod would be actual user img
   render() {
     return (
       <div>
